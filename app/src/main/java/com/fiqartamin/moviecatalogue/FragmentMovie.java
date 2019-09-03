@@ -1,5 +1,6 @@
 package com.fiqartamin.moviecatalogue;
 
+import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -15,9 +16,13 @@ import java.util.List;
 
 public class FragmentMovie  extends Fragment{
 
-    View v;
+    private String[] dataTitle, dataDesc;
+    private TypedArray dataPhoto;
     private RecyclerView recyclerView;
+    private MovieViewAdapter adapter;
     private List<Movie> movieList;
+
+    View v;
 
     public FragmentMovie() {
     }
@@ -37,21 +42,26 @@ public class FragmentMovie  extends Fragment{
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        prepare();
+        addItem();
+    }
+
+    private void prepare() {
+        dataTitle = getResources().getStringArray(R.array.data_title);
+        dataDesc = getResources().getStringArray(R.array.data_description);
+        dataPhoto = getResources().obtainTypedArray(R.array.data_photo);
+    }
+
+    private void addItem() {
         movieList = new ArrayList<>();
-        movieList.add(new Movie("a start is born", "Ini Deskripsi a start is born", R.drawable.movies_poster_a_start_is_born));
-        movieList.add(new Movie("alita", "Ini Deskripsi alita", R.drawable.movies_poster_alita));
-        movieList.add(new Movie("aquaman", "Ini Deskripsi aquaman", R.drawable.movies_poster_aquaman));
-        movieList.add(new Movie("bohemian", "Ini Deskripsi bohemian", R.drawable.movies_poster_bohemian));
-        movieList.add(new Movie("cold persuit", "Ini Deskripsi cold persuit", R.drawable.movies_poster_cold_persuit));
-        movieList.add(new Movie("a start is born", "Ini Deskripsi a start is born", R.drawable.movies_poster_a_start_is_born));
-        movieList.add(new Movie("alita", "Ini Deskripsi alita", R.drawable.movies_poster_alita));
-        movieList.add(new Movie("aquaman", "Ini Deskripsi aquaman", R.drawable.movies_poster_aquaman));
-        movieList.add(new Movie("bohemian", "Ini Deskripsi bohemian", R.drawable.movies_poster_bohemian));
-        movieList.add(new Movie("cold persuit", "Ini Deskripsi cold persuit", R.drawable.movies_poster_cold_persuit));
-        movieList.add(new Movie("a start is born", "Ini Deskripsi a start is born", R.drawable.movies_poster_a_start_is_born));
-        movieList.add(new Movie("alita", "Ini Deskripsi alita", R.drawable.movies_poster_alita));
-        movieList.add(new Movie("aquaman", "Ini Deskripsi aquaman", R.drawable.movies_poster_aquaman));
-        movieList.add(new Movie("bohemian", "Ini Deskripsi bohemian", R.drawable.movies_poster_bohemian));
-        movieList.add(new Movie("cold persuit", "Ini Deskripsi cold persuit", R.drawable.movies_poster_cold_persuit));
+
+        for (int i = 0; i < dataTitle.length; i++) {
+            Movie movie = new Movie();
+            movie.setTitle(dataTitle[i]);
+            movie.setDesc(dataDesc[i]);
+            movie.setPhoto(dataPhoto.getResourceId(i, -1));
+            movieList.add(movie);
+        }
+
     }
 }
