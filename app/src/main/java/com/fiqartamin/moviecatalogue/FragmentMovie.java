@@ -31,9 +31,11 @@ public class FragmentMovie  extends Fragment{
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.movie_fragment, container, false);
         recyclerView = v.findViewById(R.id.movie_rv);
+
         MovieViewAdapter movieViewAdapter = new MovieViewAdapter(getContext(), movieList);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(movieViewAdapter);
+
         return v;
     }
 
@@ -43,6 +45,7 @@ public class FragmentMovie  extends Fragment{
 
         prepare();
         addItem();
+
     }
 
     private void prepare() {

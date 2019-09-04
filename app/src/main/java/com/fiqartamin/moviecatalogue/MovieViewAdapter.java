@@ -1,9 +1,9 @@
 package com.fiqartamin.moviecatalogue;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
-import android.support.design.widget.TabLayout;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,6 +34,10 @@ public class MovieViewAdapter extends RecyclerView.Adapter<MovieViewAdapter.MyVi
             @Override
             public void onClick(View v) {
                 Toast.makeText(context, mData.get(vHolder.getAdapterPosition()).getTitle(), Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(context, DetailActivity.class);
+                intent.putExtra(DetailActivity.EXTRA_MOVIE, mData.get(vHolder.getAdapterPosition()));
+                context.startActivity(intent);
             }
         });
 
