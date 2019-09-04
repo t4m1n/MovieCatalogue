@@ -46,10 +46,10 @@ public class FragmentMovie  extends Fragment{
     }
 
     private void prepare() {
-        dataTitle = getResources().getStringArray(R.array.data_title);
-        dataDesc = getResources().getStringArray(R.array.data_description);
-        dataRelease = getResources().getStringArray(R.array.data_release);
-        dataPhoto = getResources().obtainTypedArray(R.array.data_photo);
+        dataTitle = getResources().getStringArray(R.array.movies_data_title);
+        dataDesc = getResources().getStringArray(R.array.movies_data_description);
+        dataRelease = getResources().getStringArray(R.array.movies_data_release);
+        dataPhoto = getResources().obtainTypedArray(R.array.movies_data_photo);
     }
 
     private void addItem() {
