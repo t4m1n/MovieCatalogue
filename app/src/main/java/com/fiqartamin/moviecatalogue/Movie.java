@@ -2,16 +2,10 @@ package com.fiqartamin.moviecatalogue;
 
 public class Movie {
 
-    private String title, desc;
+    private String title, desc, release;
     private int photo;
 
     public Movie() {
-    }
-
-    public Movie(String title, String desc, int photo) {
-        this.title = title;
-        this.desc = desc;
-        this.photo = photo;
     }
 
     public String getTitle() {
@@ -28,6 +22,14 @@ public class Movie {
 
     public void setDesc(String desc) {
         this.desc = desc;
+    }
+
+    public String getRelease() {
+        return release;
+    }
+
+    public void setRelease(String release) {
+        this.release = release;
     }
 
     public int getPhoto() {

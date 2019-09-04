@@ -16,10 +16,9 @@ import java.util.List;
 
 public class FragmentMovie  extends Fragment{
 
-    private String[] dataTitle, dataDesc;
+    private String[] dataTitle, dataDesc, dataRelease;
     private TypedArray dataPhoto;
     private RecyclerView recyclerView;
-    private MovieViewAdapter adapter;
     private List<Movie> movieList;
 
     View v;
@@ -49,6 +48,7 @@ public class FragmentMovie  extends Fragment{
     private void prepare() {
         dataTitle = getResources().getStringArray(R.array.data_title);
         dataDesc = getResources().getStringArray(R.array.data_description);
+        dataRelease = getResources().getStringArray(R.array.data_release);
         dataPhoto = getResources().obtainTypedArray(R.array.data_photo);
     }
 
@@ -59,6 +59,7 @@ public class FragmentMovie  extends Fragment{
             Movie movie = new Movie();
             movie.setTitle(dataTitle[i]);
             movie.setDesc(dataDesc[i]);
+            movie.setRelease(dataRelease[i]);
             movie.setPhoto(dataPhoto.getResourceId(i, -1));
             movieList.add(movie);
         }
