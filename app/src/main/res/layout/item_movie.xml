@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/movie_const">
 
     <ImageView
@@ -19,15 +20,17 @@
 
     <TextView
         android:id="@+id/movie_title"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
         android:layout_marginStart="16dp"
-        android:text="Judul"
         android:textColor="@color/colorAccent"
         android:textSize="16sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/movie_img"
-        app:layout_constraintTop_toTopOf="@+id/movie_img" />
+        app:layout_constraintTop_toTopOf="@+id/movie_img"
+        tools:text="Judul"/>
 
     <TextView
         android:id="@+id/movie_release"
@@ -36,10 +39,10 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="4dp"
         android:textStyle="italic|bold"
-        android:text="Release"
         android:textColor="@android:color/white"
         app:layout_constraintStart_toEndOf="@+id/movie_img"
-        app:layout_constraintTop_toBottomOf="@+id/movie_title" />
+        app:layout_constraintTop_toBottomOf="@+id/movie_title"
+        tools:text="Release"/>
 
     <TextView
         android:id="@+id/movie_desc"
@@ -48,13 +51,13 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:maxLines="4"
-        android:text="Deskripsi"
+        android:maxLines="3"
         android:justificationMode="inter_word"
         android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/movie_img"
-        app:layout_constraintTop_toBottomOf="@+id/movie_release" />
+        app:layout_constraintTop_toBottomOf="@+id/movie_release"
+        tools:text="Deskripsi"/>
 
 </android.support.constraint.ConstraintLayout>
