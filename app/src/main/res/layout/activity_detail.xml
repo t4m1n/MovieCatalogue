@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,70 +7,80 @@
     android:background="@color/backgroundfragment"
     tools:context=".DetailActivity">
 
-    <ImageView
-        android:id="@+id/movie_det_img"
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:adjustViewBounds="true"
-        android:scaleType="centerCrop"
-        android:src="@drawable/tv_poster_the_simpson" />
-
-    <ImageView
-        android:id="@+id/movie_det_thumb"
-        android:layout_width="100dp"
-        android:layout_height="130dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:adjustViewBounds="true"
-        android:scaleType="fitXY"
-        android:src="@drawable/tv_poster_the_simpson"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/movie_det_img" />
-
-    <TextView
-        android:id="@+id/movie_det_title"
-        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:textColor="@color/colorAccent"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/movie_det_thumb"
-        app:layout_constraintTop_toTopOf="@+id/movie_det_thumb"
-        tools:text="Ini Judul Detail" />
+        android:paddingBottom="32dp">
 
-    <TextView
-        android:id="@+id/movie_det_release"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:textColor="@android:color/white"
-        android:textStyle="italic"
-        app:layout_constraintStart_toEndOf="@+id/movie_det_thumb"
-        app:layout_constraintTop_toBottomOf="@+id/movie_det_title"
-        tools:text="Release"/>
+        <ImageView
+            android:id="@+id/movie_det_img"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/tv_poster_the_simpson" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@android:color/white"
-        android:textStyle="bold"
-        tools:text="Overview"/>
+        <ImageView
+            android:id="@+id/movie_det_thumb"
+            android:layout_width="100dp"
+            android:layout_height="130dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/tv_poster_the_simpson"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/movie_det_img" />
 
-    <TextView
-        android:id="@+id/movie_det_desc"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="8dp"
-        android:textColor="@android:color/white"
-        android:justificationMode="inter_word"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/movie_det_thumb"
-        app:layout_constraintTop_toBottomOf="@+id/movie_det_thumb"
-        tools:text="Ini adalah detail dari movie"/>
+        <TextView
+            android:id="@+id/movie_det_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:textColor="@color/colorAccent"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/movie_det_thumb"
+            app:layout_constraintTop_toTopOf="@+id/movie_det_thumb"
+            tools:text="Ini Judul Detail" />
 
-</android.support.constraint.ConstraintLayout>
+        <TextView
+            android:id="@+id/movie_det_release"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:textColor="@android:color/white"
+            android:textStyle="italic"
+            app:layout_constraintStart_toEndOf="@+id/movie_det_thumb"
+            app:layout_constraintTop_toBottomOf="@+id/movie_det_title"
+            tools:text="Release" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@android:color/white"
+            android:text="@string/overview"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/movie_det_thumb"
+            app:layout_constraintTop_toBottomOf="@+id/movie_det_thumb" />
+
+        <TextView
+            android:id="@+id/movie_det_desc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:justificationMode="inter_word"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/movie_det_thumb"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            tools:text="Ini adalah detail dari movie" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</ScrollView >
