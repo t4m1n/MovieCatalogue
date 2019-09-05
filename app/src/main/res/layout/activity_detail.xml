@@ -21,6 +21,20 @@
             android:src="@drawable/tv_poster_the_simpson" />
 
         <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/play"
+            app:layout_constraintBottom_toBottomOf="@+id/movie_det_img"
+            app:layout_constraintEnd_toEndOf="@+id/movie_det_img"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/movie_det_img" />
+
+        <ImageView
             android:id="@+id/movie_det_thumb"
             android:layout_width="100dp"
             android:layout_height="130dp"
