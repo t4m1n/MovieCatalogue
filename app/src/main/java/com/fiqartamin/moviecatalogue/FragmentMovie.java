@@ -63,6 +63,7 @@ public class FragmentMovie  extends Fragment{
             movie.setTitle(dataTitle[i]);
             movie.setDesc(dataDesc[i]);
             movie.setRelease(dataRelease[i]);
+            movie.setCategory(getString(R.string.movie));
             movie.setPhoto(dataPhoto.getResourceId(i, -1));
             movieList.add(movie);
         }

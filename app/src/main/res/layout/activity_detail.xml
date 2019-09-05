@@ -47,23 +47,57 @@
             tools:text="Ini Judul Detail" />
 
         <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/release"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/movie_det_thumb"
+            app:layout_constraintTop_toBottomOf="@+id/movie_det_title" />
+
+        <TextView
             android:id="@+id/movie_det_release"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="2dp"
             android:textColor="@android:color/white"
-            android:textStyle="italic"
             app:layout_constraintStart_toEndOf="@+id/movie_det_thumb"
-            app:layout_constraintTop_toBottomOf="@+id/movie_det_title"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
             tools:text="Release" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/category"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/movie_det_thumb"
+            app:layout_constraintTop_toBottomOf="@+id/movie_det_release" />
+
+        <TextView
+            android:id="@+id/movie_det_cat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="2dp"
+            android:textColor="@android:color/white"
+            app:layout_constraintStart_toEndOf="@+id/movie_det_thumb"
+            app:layout_constraintTop_toBottomOf="@+id/textView3"
+            tools:text="Category" />
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:textColor="@android:color/white"
+            android:textColor="@color/colorAccent"
             android:text="@string/overview"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/movie_det_thumb"

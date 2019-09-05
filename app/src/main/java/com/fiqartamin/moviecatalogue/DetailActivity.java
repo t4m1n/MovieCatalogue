@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 public class DetailActivity extends AppCompatActivity {
     public static final String EXTRA_MOVIE = "extra_movie";
-    TextView tvTitle, tvRelease, tvDesc;
+    TextView tvTitle, tvRelease, tvDesc, tvCategory;
     ImageView imgPhoto, imgThumb;
 
     @Override
@@ -26,6 +26,9 @@ public class DetailActivity extends AppCompatActivity {
 
             tvDesc = findViewById(R.id.movie_det_desc);
             tvDesc.setText(selectedMovie.getDesc());
+
+            tvCategory = findViewById(R.id.movie_det_cat);
+            tvCategory.setText(selectedMovie.getCategory());
 
             imgPhoto = findViewById(R.id.movie_det_img);
             imgPhoto.setImageResource(selectedMovie.getPhoto());

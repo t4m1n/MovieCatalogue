@@ -5,7 +5,7 @@ import android.os.Parcelable;
 
 public class Movie implements Parcelable {
 
-    private String title, desc, release;
+    private String title, desc, release, category;
     private int photo;
 
     public Movie() {
@@ -43,6 +43,13 @@ public class Movie implements Parcelable {
         this.photo = photo;
     }
 
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
 
     @Override
     public int describeContents() {
@@ -54,6 +61,7 @@ public class Movie implements Parcelable {
         dest.writeString(this.title);
         dest.writeString(this.desc);
         dest.writeString(this.release);
+        dest.writeString(this.category);
         dest.writeInt(this.photo);
     }
 
@@ -61,6 +69,7 @@ public class Movie implements Parcelable {
         this.title = in.readString();
         this.desc = in.readString();
         this.release = in.readString();
+        this.category = in.readString();
         this.photo = in.readInt();
     }
 
